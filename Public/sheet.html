@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="./sheetstyle.css">
+  <script src="sheetscripts.js"></script>
+</head>
+<header>
+  <form class="logout" method="post">
+    <button type="submit">Logout</button>
+  </form>
+</header>
+<body>
+<div class ="addmenu" id="addWeaponMenu">
+  <h1>Add Weapon</h1>
+  <form id="addWeapon">
+    <label for="weaponName">Weapon Name</label><br>
+    <input type="text" name="addWeaponName" id="addWeaponName"><br>
+    <label for="weaponRange">Weapon Range</label><br>
+    <input type="text" name="addWeaponRange" id="addWeaponRange"><br>
+    <label for="weaponMags">Weapon Mags</label><br>
+    <input type="text" name="addWeaponDamage" id="addWeaponDamage"><br>
+    <label for="weaponMags">Weapon Damage</label><br>
+    <input type="text" name="addWeaponMags" id="addWeaponMags"><br>
+    <label for="weaponTraits">Weapon Traits</label><br>
+    <input type="text" name="addWeaponTraits" id="addWeaponTraits"><br>
+  </form>
+  <button onclick="weaponTableAdd()">Create Weapon</button>
+</div>
+<form class="status">
+  <input type="text" name="name" placeholder="Enter Name:">
+  <br>
+  <!-- TODO: USE JAVASCRIPT TO LIMIT NUMBERS -->
+  <label for="hp">HP:</label>
+  <input type="number" name="hp" id="hp" class="numbox" onchange="max2digits('hp')">/ <input type="number" name="maxhp" id="maxhp" class="numbox" onchange="max2digits('maxhp')">
+  <label for="armor">Armor:</label>
+  <input type="text" name="armor" class="armorbox">
+  <!-- TODO: ADD ARMOR BUTTONS -->
+  <br>
+  <label for="glitches">Glitches:</label>
+  <input type="number" name="glitch" class="numbox" id="glitch" onchange="max1digit('glitch')">/ <input type="number" name="maxglitch" class="numbox" onchange="max1digit('maxglitch')">
+</form>
+<div class="statbar">
+  <form class="stat" id="strength">
+    <label for="strength">Strength</label><br>
+    <input type="number" name="strength" class="statnum">
+  </form>
+  <span class="boxspace">&nbsp</span>
+  <form class="stat" id="agility">
+    <label for="agility">Agility</label><br>
+    <input type="number" name="agility" class="statnum">
+  </form>
+  <span class="boxspace">&nbsp</span>
+  <form class="stat" id="prescence">
+    <label for="prescemce">Prescence</label><br>
+    <input type="number" name="Prescence" class="statnum">
+  </form>
+  <span class="boxspace">&nbsp</span>
+  <form class="stat" id="toughness">
+    <label for="toughness">Toughness</label><br>
+    <input type="number" name="toughness" class="statnum">
+  </form>
+  <span class="boxspace">&nbsp</span>
+  <form class="stat" id="knowledge">
+    <label for="knowledge">Knowledge</label><br>
+    <input type="number" name="knowledge" class="statnum">
+  </form>
+</div>
+<div class="gear">
+  <h2>Weapons</h2>
+  <table type="text" class="itembox"  id="weapons">
+    <tr>
+      <th id="weaponName">Name</th>
+      <th id="weaponRange">Range</th>
+      <th id="weaponMags">Mags</th>
+      <th id="weaponDamage">Damage</th>
+      <th id="weaponTraits">Traits</th>
+      <th id="weaponRemove">Remove</th>
+    </tr>
+  </table>
+  <button class="addItem" onclick="revealObject('addWeaponMenu')">Add Weapon</button>
+</div>
+<!-- <form class="gear">
+  <label for="weapons" class="gearheader">Weapons</label><br>
+  <label for="apps" class="gearheader">Apps</label><br>
+  <textarea type="text" class="itembox" name="apps"></textarea><br>
+  <label for="items" class="gearheader">Items</label><br>
+  <textarea type="text" class="itembox" name="items"></textarea><br>
+  <label for="cyberware" class="gearheader">Cyberware</label><br>
+  <textarea type="text" class="itembox" name="cyberare"></textarea><br>
+  <label for="nano" class="gearheader">Nano</label><br>
+  <textarea type="text" class="itembox" name="nano"></textarea><br>
+</form> -->
+<form class="info">
+  <label for="info" class="infoheader">info</label><br>
+  <textarea type="text" class="infobox" name="info"></textarea><br>
+  <label for="class" class="infoheader">class</label><br>
+  <textarea type="text" class="infobox" name="class"></textarea><br>
+</form>
+
+
+</body>
