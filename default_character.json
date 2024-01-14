@@ -1,0 +1,41 @@
+{
+    "Name":"",
+    "pfp_filename":"default.png",
+    "Health": {
+        "Currhealth": 0,
+        "Maxhealth": 0
+    },
+    "Armor": "d2",
+    "Glitches": {
+        "Currglitches": 0,
+        "Maxglitches" : 0
+    },
+    "Stats": {
+        "Strength": 0,
+        "Agility" : 0,
+        "Prescence" : 0,
+        "Toughness" : 0,
+        "Knowledge" : 0
+    },
+    "Money": {
+        "Credits": 0,
+        "Debt" : 0
+    },
+    "Weapons": [
+
+    ],
+    "Info": "",
+    "Class": "",
+    "Apps": [
+
+    ],
+    "Nanos": [
+
+    ],
+    "Equipment": [
+
+    ],
+    "Cybertech": [
+
+    ]
+}

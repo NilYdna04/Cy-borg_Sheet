@@ -30,36 +30,34 @@ function hideObject(id) {
 }
 
 function hideObjects() {
-    // Hide everything
+    // TODO: Hide everything when clicked off
     hideObject("addWeaponMenu");
 }
 
-// function addWeapon(name, range, mags, traits) {
-//     let form = document.getElementById("addWeapon");
-//     let table = document.getElementById("table");
-//     form.addEventListener('submit', (e)=>{
-//         e.preventDefault();
-        
-//     })
-// }
 
-function weaponTableAdd() {
-    let table = document.getElementById("weapons");
-    let form = document.getElementById("addWeapon");
-    let name = document.getElementById("addWeaponName").value;
-    let range = document.getElementById("addWeaponRange").value;
-    let mags = document.getElementById("addWeaponMags").value;
-    let damage = document.getElementById("addWeaponDamage").value;
-    let traits = document.getElementById("addWeaponTraits").value;
+function addToTable(table, form, menu) {
+    let form_obj = document.getElementById(form);
+    params = Array.from(form_obj.elements);
+    addRow(table, params);
 
-    var row = table.insertRow(table.rows.length);
-    row.insertCell(0).innerHTML = name;
-    row.insertCell(1).innerHTML = range;
-    row.insertCell(2).innerHTML = mags;
-    row.insertCell(3).innerHTML = damage;
-    row.insertCell(4).innerHTML = traits;
-    row.insertCell(5);
+    form_obj.reset();
+    hideObject(menu)
+}
 
-    form.reset();
-    hideObject("addWeaponMenu")
+function addRow(table_name, params) {
+    let table = document.getElementById(table_name);
+    var index = table.rows.length
+    var row = table.insertRow(index)
+    for(i = 0; i < params.length; i++) {
+        let cell = row.insertCell(i);
+        cell.innerHTML = '<input type="text">'
+        cell.value = params[i].value
+    }
+    row.insertCell(params.length).innerHTML = `<input type="button" class="remove_button" onclick="removeRow('${table_name}','${index}')" value="X">`;
+
+}
+
+function removeRow(table_name, index) {
+    let table = document.getElementById(table_name);
+    table.deleteRow(index);
 }

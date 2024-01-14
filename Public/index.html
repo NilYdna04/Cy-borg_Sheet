@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <head>
-  <title>Andrew Lin</title>
   <link rel="stylesheet" href="./homestyle.css">
+  <script src="./login_scripts.js"></script>
 </head>
 <header>
   <h1>NilYdna's Cy-borg character Sheet</h1>
 </header>
 <body>
-  <form class="login" method="post">
-    <label for="uname">Username:</label>
-    <input type="text" name="uname" required>
+    <span>Username:</span>
+    <input type="text" id="uname">
     <br>
-    <label for="pswd">Password:</label>
-    <input type="text" name="pswd" required>
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember Me
-    </label>
-  </form>
+    <span class="error" id="uname_error">Error: Username not found</span>
+    <br>
+    <span>Password:</span>
+    <input type="password" id="pswd">
+    <br>
+    <span class="error" id="pswd_error">Error: Password is incorrect</span>
+    <br>
+    <button onclick="login()">Login</button>
+    <input type="checkbox" checked="checked" name="remember"> Remember Me
+    <br>
+    <a href="/create_account">Create a new account</a>
+  
 </body>

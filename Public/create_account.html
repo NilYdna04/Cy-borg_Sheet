@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="./createstyle.css">
+  <script src="./create_scripts.js"></script>
+</head>
+<header>
+  <h1>Create a new account</h1>
+</header>
+<body>
+    <span>Email:</span>
+    <input type="text" class= "login_input" id="email">
+    <br>
+    <span class="error" id="email_error">Error: Email already exists</span>
+    <br>
+    <span for="uname">New Username:</span>
+    <input type="text" class= "login_input" id="uname">
+    <br>
+    <span class="error" id="uname_error">Error: Username already exists</span>
+    <br>
+    <span for="pswd">New Password:</span>
+    <input type="password" class= "login_input" id="pswd">
+    <br>
+    <span for="pswd_check">Repeat Password:</span>
+    <input type="password" class= "login_input" id="pswd_check">
+    <br>
+  <button onclick="submit()">Create a new account</button>
+</body>

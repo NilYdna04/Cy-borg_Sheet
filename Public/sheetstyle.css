@@ -2,6 +2,7 @@
     text-align:right;
     margin-right: 10px;
     margin-top: 10px;
+    float: right;
 }
 
 .status {
@@ -12,12 +13,18 @@
     width: 40px;
 }
 
-input[name="name"] {
+.name {
    font-size: 40px;
 }
 
 .statbar{
     text-align: center;
+    clear: both;
+}
+
+
+.left {
+    float: left;
 }
 
 .stat{
@@ -43,40 +50,37 @@ input[name="name"] {
     float:left;
 }
 
-.gear{
+.right {
+    float:right;
+}
+
+.weapons{
     border: solid black 2px;
     text-align: center;
     width: 600px;
     margin-top: 50px;
-    float:right;
 }
 
-#weaponName{
-    width: 250px;
+.gear{
+
+    border: solid black 2px;
+    text-align: center;
+    width: 600px;
+    margin-top: 50px;
 }
 
-#weaponRange{
-    width: 75px;
-}
-
-#weaponDamage{
-    width: 75px;
-}
-
-#weaponTraits{
-    width: 400px;
-}
-
-#weaponMags{
+.remove_box {
     width: 50px;
 }
 
 .info{
     border: solid black 2px;
     /* width: 600px; */
-    margin-top: 50px;
-    float:left;
+    margin-top: 10px;
 }
+
+.abilities{
+    border: solid black 2px;}
 
 .gearheader{
     font-weight: bold;
@@ -89,14 +93,13 @@ input[name="name"] {
 }
 
 .itembox {
-    height: 100px;
     width: 100%;
     border: 1px solid;
 }
 
 .infobox{
-    height: 300px;
-    width: 500px;
+    height: 100px;
+    width: 750px;
 }
 
 .addmenu {
@@ -120,4 +123,19 @@ table, th, td {
 
     border: 1px solid black;
     
-    }
+}
+
+#gearName {
+    width: 100px;
+    height: 25px;
+    margin: 0;
+}
+
+#gearDescription {
+    height: 25px;
+    margin: 0;
+}
+
+.wideRow {
+    height: 50px;
+}

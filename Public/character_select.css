@@ -1,0 +1,27 @@
+.select_header {
+    text-align: center;
+    font-size: 30px;
+    border: solid black 2px;
+}
+
+.image_row {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.character {
+    visibility: hidden;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    width: 96px;
+    height:96px;
+}
