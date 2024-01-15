@@ -35,25 +35,17 @@ function hideObjects() {
 }
 
 
-function addToTable(table, form, menu) {
-    let form_obj = document.getElementById(form);
-    params = Array.from(form_obj.elements);
-    addRow(table, params);
-
-    form_obj.reset();
-    hideObject(menu)
-}
-
-function addRow(table_name, params) {
+function addToTable(table_name) {
     let table = document.getElementById(table_name);
     var index = table.rows.length
     var row = table.insertRow(index)
-    for(i = 0; i < params.length; i++) {
+    let num_cells = table.rows[0].cells.length -1
+    for(i = 0; i < num_cells; i++) {
         let cell = row.insertCell(i);
-        cell.innerHTML = '<input type="text">'
-        cell.value = params[i].value
+        let size = table.rows[0].cells[i].innerHTML.length
+        cell.innerHTML = `<th><input type="text"></th>`
     }
-    row.insertCell(params.length).innerHTML = `<input type="button" class="remove_button" onclick="removeRow('${table_name}','${index}')" value="X">`;
+    row.insertCell(num_cells).innerHTML = `<input type="button" class="remove_button" onclick="removeRow('${table_name}','${index}')" value="X">`;
 
 }
 

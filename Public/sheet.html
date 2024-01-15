@@ -69,10 +69,10 @@
         <th>Mags</th>
         <th>Damage</th>
         <th>Traits</th>
-        <th class="remove_box">Remove</th>
+        <th>Remove</th>
       </tr>
     </table>
-    <button class="addItem" onclick="revealObject('addWeaponMenu')">Add Weapon</button>
+    <button class="addItem" onclick="addToTable('weapons')">Add Weapon</button>
   </div>
   <div class="gear">
     <h2>Gear</h2>
@@ -83,7 +83,7 @@
           <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button onclick="revealObject('addGearMenu')">Add Gear</button>
+    <button onclick="addToTable('gear')">Add Gear</button>
   </div>
 </div>
 
@@ -117,7 +117,7 @@
         <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button class="addItem" onclick="revealObject('addAppMenu')">Add App</button>
+    <button class="addItem" onclick="addToTable('apps')">Add App</button>
   </div>
   <div class="info">
     <span class="infoheader">Nanos</span><br>
@@ -128,57 +128,8 @@
         <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button class="addItem" onclick="revealObject('addPowerMenu')">Add Power</button>
+    <button class="addItem"  onclick="addToTable('powers')">Add Power</button>
   </div>
 </div>
-<div class ="addmenu" id="addWeaponMenu">
-  <h1>Add Weapon</h1>
-  <form id="addWeapon">
-    <span for="addWeaponName">Weapon Name</span><br>
-    <input type="text" name="addWeaponName" id="addWeaponName"><br>
-    <span for="addWeaponRange">Weapon Range</span><br>
-    <input type="text" name="addWeaponRange" id="addWeaponRange"><br>
-    <span for="addWeaponMags">Weapon Mags</span><br>
-    <input type="text" name="addWeaponDamage" id="addWeaponDamage"><br>
-    <span for="addWeaponMags">Weapon Damage</span><br>
-    <input type="text" name="addWeaponMags" id="addWeaponMags"><br>
-    <span for="addWeaponTraits">Weapon Traits</span><br>
-    <input type="text" name="addWeaponTraits" id="addWeaponTraits"><br>
-  </form>
-  <button onclick="addToTable('weapons', 'addWeapon', 'addWeaponMenu')">Add Weapon</button>
-</div>
 
-<div class ="addmenu" id="addAppMenu">
-  <h1>Add App</h1>
-  <form id="addApp">
-    <span for="addAppName">App Name</span><br>
-    <input type="text" name="addAppName" id="addAppName"><br>
-
-    <span for="addAppDesc">App Description</span><br>
-    <input type="text" name="addAppDesc" id="addWeaponRange"><br>
-  </form>
-  <button onclick="addToTable('apps', 'addApp', 'addAppMenu')">Add App</button>
-</div>
-
-<div class ="addmenu" id="addGearMenu">
-  <h1>Add Gear</h1>
-  <form id="addGear">
-    <span for="addGearName">Gear Name</span><br>
-    <input type="text" name="addGearName" id="addGearName"><br>
-
-    <span for="addAppDesc">Gear Description</span><br>
-    <input type="text" name="addGearDesc" id="addGearDesc"><br>
-  </form>
-  <button onclick="addToTable('gear', 'addGear', 'addGearMenu')">Add Gear</button>
-</div>
-<div class ="addmenu" id="addPowerMenu">
-  <h1>Add Power</h1>
-  <form id="addPower">
-    <span for="addPowerName">Power Name</span><br>
-    <input type="text" name="addPowerName" id="addPowerName"><br>
-    <span for="addPowerDesc">Power Description</span><br>
-    <input type="text" name="addPowerDesc" id="addPowerDesc"><br>
-  </form>
-  <button onclick="addToTable('powers', 'addPower', 'addPowerMenu')">Add Gear</button>
-</div>
 </body>
