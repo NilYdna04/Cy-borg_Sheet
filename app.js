@@ -16,7 +16,6 @@ const SqliteStore = require("better-sqlite3-session-store")(session)
 const session_db = new sqlite("./Cy-borg_sheet.db");
 
 
-
 const app = express();
 const port = 8080;
 // let project = path.join('C:/Users/nilyd/OneDrive/Desktop/coding projects/personal/HTML Projects/Cy-borg sheet');

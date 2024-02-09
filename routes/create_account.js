@@ -72,7 +72,7 @@ router.post('/', async function(req,res) {
     let create_default_chars = `INSERT INTO Characters (User_ID, Character_ID, data)
                                 VALUES (?,?,?)`
     for(let i = 0; i < 3; i++) {
-        await db.set(create_default_chars, [new_user.ID, i, JSON.stringify(default_char)])
+        await db.set(create_default_chars, [new_user.ID, i+1, JSON.stringify(default_char)])
     }
     console.log("success!")
     res.send("success")

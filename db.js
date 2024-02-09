@@ -71,6 +71,7 @@ async function all(query, params) {
 
 async function set(query, params) {
     return await new Promise((resolve, reject) => {
+        console.log(query)
         stmt = db.prepare(query)
         stmt.run(params)
         resolve()

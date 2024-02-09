@@ -3,13 +3,34 @@
   <link rel="stylesheet" href="/Public/sheetstyle.css">
   <script src="/Public/sheetscripts.js"></script>
   <script src="/Public/get_data.js"></script>
+  <script src="/Public/save_data.js"></script>
 </head>
 <header>
-  <!-- TODO: LOGOUT -->
 </header>
 <body onload="get_data()">
 <div class="status">
   <div class="left">
+    <!-- <form ref='uploadForm' 
+      id='uploadForm' 
+      action='http://localhost:8000/upload' 
+      method='post' 
+      encType="multipart/form-data">
+        <input type="file" name="sampleFile" />
+        <input type='submit' value='Upload!' />
+    </form>  -->
+    <form action='http://localhost:8000/characters/sheet/save/pfp' method='post' id="pfp_upload" encType="multipart/form-data">
+      <img id="pfp" class="pfp">
+      <br>
+      <input type="file" id="selectedFile" accept="image/png, image/gif, image/jpeg" style="display: none;" />
+      <input type="button" value="New Picture" onclick="upload_pfp()" />
+      <input type='submit' value='Upload!' />
+    </form>
+  </div>
+  <div class="left_space">
+
+  </div>
+  <div class="left">
+    
     <input type="text" id="name" class="name" placeholder="Enter Name:">
     <br>
     <span>HP:</span>
@@ -27,8 +48,8 @@
   
   <!-- Save Buttons -->
   <div class="right">
-    <button>Save</button><br>
-    <button>Save and quit</button><br>
+    <button onclick="save_data()">Save</button><br>
+    <button onclick="logout()">Logout</button><br>
   </div>
 </div>
 
@@ -59,76 +80,63 @@
   </div>
 </div>
 
-<div class="right"> 
-  <div class="weapons">
+<div class="right">
+  <div class="table_block">
+    <h2>Class</h2>
+    <textarea type="text" class="infobox" id="class"></textarea>
+  </div>
+  <div class="table_block">
     <h2>Weapons</h2>
     <table type="text" class="itembox"  id="weapons">
       <tr>
-        <th>Name</th>
-        <th>Range</th>
-        <th>Mags</th>
-        <th>Damage</th>
-        <th>Traits</th>
-        <th>Remove</th>
+        <th class="w_name">Name</th>
+        <th class="w_range">Range</th>
+        <th class="w_mags">Mags</th>
+        <th class="w_damage">Damage</th>
+        <th class="w_traits">Traits</th>
+        <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button class="addItem" onclick="addToTable('weapons')">Add Weapon</button>
+    <button class="addItem" onclick="addToTable('weapons', ['w_name', 'w_range', 'w_mags', 'w_damage', 'w_traits'], [])">Add Weapon</button>
   </div>
-  <div class="gear">
-    <h2>Gear</h2>
+  <div class="table_block">
+    <h2>Gear/Cybertech</h2>
     <table type="text" class="itembox" id="gear">
       <tr>
-          <th>Item Name</th>
-          <th>Description</th>
+          <th class="g_name">Item Name</th>
+          <th class="g_desc">Description</th>
           <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button onclick="addToTable('gear')">Add Gear</button>
+    <button class="addItem" onclick="addToTable('gear', ['g_name', 'g_desc'], [])">Add Gear</button>
   </div>
 </div>
-
-
-
-<!-- <div class="gear">
-  <span for="weapons" class="gearheader">Weapons</span><br>
-  <span for="apps" class="gearheader">Apps</span><br>
-  <textarea type="text" class="itembox" name="apps"></textarea><br>
-  <span for="items" class="gearheader">Items</span><br>
-  <textarea type="text" class="itembox" name="items"></textarea><br>
-  <span for="cyberware" class="gearheader">Cyberware</span><br>
-  <textarea type="text" class="itembox" name="cyberare"></textarea><br>
-  <span for="nano" class="gearheader">Nano</span><br>
-  <textarea type="text" class="itembox" name="nano"></textarea><br>
-</div> -->
 <div class="left">
-  <div class="info">
-    <span for="info" class="infoheader">info</span><br>
-    <textarea type="text" class="infobox" name="info"></textarea><br>
-    <span for="class" class="infoheader">class</span><br>
-    <textarea type="text" class="infobox" name="class"></textarea><br>
+  <div class="table_block">
+    <h2>Info</h2>
+    <textarea type="text" class="infobox" id="info"></textarea>
   </div>
-  <br>
-  <div class="info">
-    <span for="apps" class="infoheader">Apps</span><br>
+  <div class="table_block">
+    <h2>Apps</h2>
     <table type="text" id="apps" class="itembox">
       <tr>
-        <th>Name</th>
-        <th>Description</th>
+        <th class="l_name">App</th>
+        <th class="l_desc">Description</th>
         <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button class="addItem" onclick="addToTable('apps')">Add App</button>
+    <button class="addItem"  onclick="addToTable('apps', ['g_name', 'g_desc'], [])">Add App</button>
   </div>
-  <div class="info">
-    <span class="infoheader">Nanos</span><br>
-    <table type="text" id="powers" class="itembox">
+  <div class="table_block">
+    <h2>Nanos</h2>
+    <table type="text" id="nanos" class="itembox">
       <tr>
-        <th>Power</th>
-        <th>Description</th>
+        <th class="l_name">Power/Infestation</th>
+        <th class="l_desc">Description</th>
         <th class="remove_box">Remove</th>
       </tr>
     </table>
-    <button class="addItem"  onclick="addToTable('powers')">Add Power</button>
+    <button class="addItem" onclick="addNano()">Add Nano</button>
   </div>
 </div>
 

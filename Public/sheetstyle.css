@@ -5,6 +5,12 @@
     float: right;
 }
 
+.pfp {
+    width: 115px;
+    height: 115px; 
+    border: 1px black solid;
+}
+
 .status {
     font-size: 20px;
 }
@@ -25,6 +31,11 @@
 
 .left {
     float: left;
+}
+
+.left_space{
+    float: left;
+    padding:5px;
 }
 
 .stat{
@@ -54,28 +65,18 @@
     float:right;
 }
 
-.weapons{
-    border: solid black 2px;
-    text-align: center;
-    width: 600px;
-    margin-top: 50px;
-}
-
-.gear{
-
-    border: solid black 2px;
-    text-align: center;
-    width: 600px;
-    margin-top: 50px;
-}
-
-.remove_box {
-    width: 50px;
-}
 
 .info{
     border: solid black 2px;
-    /* width: 600px; */
+    width: 750px;
+    margin-top: 10px;
+    text-align:center;
+}
+
+.table_block{
+    border: solid black 2px;
+    text-align: center;
+    width: 600px;
     margin-top: 10px;
 }
 
@@ -87,11 +88,6 @@
     font-size: 30px;
 }
 
-.infoheader{
-    font-weight: bold;
-    font-size: 30px;
-}
-
 .itembox {
     width: 100%;
     border: 1px solid;
@@ -99,7 +95,7 @@
 
 .infobox{
     height: 100px;
-    width: 750px;
+    width: 550px;
 }
 
 .addmenu {
@@ -138,4 +134,54 @@ table, th, td {
 
 .wideRow {
     height: 50px;
+}
+
+.w_name {
+    width: 150px;
+}
+
+.w_range {
+    width: 100px;
+}
+
+.w_mags {
+    width: 50px;
+}
+
+.w_damage {
+    width: 100px;
+}
+
+.w_traits {
+    width: 150px;
+}
+
+.g_name {
+    width: 150px;
+}
+
+.g_desc {
+    width: 400px;
+}
+
+.l_name {
+    width: 200px;
+}
+
+.l_desc {
+    width: 500px;
+}
+
+.remove_box {
+    width: 50px;
+}
+
+.table_input {
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+td {
+    word-break:break-all;
 }

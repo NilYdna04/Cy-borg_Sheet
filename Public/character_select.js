@@ -11,6 +11,7 @@ function retrieve_characters() {
             }
             else {
                 char_data = JSON.parse(xmlhttp.response)
+                console.log(char_data)
                 reveal_characters(char_data)
             }   
         }

@@ -35,21 +35,35 @@ function hideObjects() {
 }
 
 
-function addToTable(table_name) {
+function addToTable(table_name, classes, data) {
     let table = document.getElementById(table_name);
     var index = table.rows.length
     var row = table.insertRow(index)
     let num_cells = table.rows[0].cells.length -1
     for(i = 0; i < num_cells; i++) {
         let cell = row.insertCell(i);
-        let size = table.rows[0].cells[i].innerHTML.length
-        cell.innerHTML = `<th><input type="text"></th>`
+        if(i < data.length){
+            cell.innerHTML = `<td class="${classes[i]}"><div class="table_input" contenteditable="true">${data[i]}</div></td>`
+        }
+        else{
+            cell.innerHTML = `<td class="${classes[i]}"><div class="table_input" contenteditable="true"></div></td>`
+        }
     }
-    row.insertCell(num_cells).innerHTML = `<input type="button" class="remove_button" onclick="removeRow('${table_name}','${index}')" value="X">`;
+    row.insertCell(num_cells).innerHTML = `<input type="button" class="remove_button" onclick="removeRow(this)" value="X">`;
 
 }
 
-function removeRow(table_name, index) {
-    let table = document.getElementById(table_name);
-    table.deleteRow(index);
+function removeRow(o) {
+    var p=o.parentNode.parentNode;
+         p.parentNode.removeChild(p);
+}
+
+function addNano() {
+    addToTable('nanos', ['g_name', 'g_desc'], ["POWER://"])
+    addToTable('nanos', ['g_name', 'g_desc'], ["INFESTATION://"])
+}
+
+function upload_pfp() {
+    document.getElementById('selectedFile').click();
+    // document.getElementById('')
 }
