@@ -39,7 +39,6 @@ app.use(express.json());
 
 app.use(express.static("Public"))
 app.use(express.static(__dirname))
-app.use(express.static(__dirname))
 
 
 app.get('/', (req, res) => {
